@@ -59,7 +59,7 @@ public class ProfileModel {
             }else{
                 for (Row row : rs){
                     first_name = row.getString("first_name");
-                    System.out.println(first_name);  
+                    System.out.println("from db "+first_name);  
                     last_name = row.getString("last_name");
                     dob = row.getString("dob");
                     gender = row.getString("gender");
@@ -69,7 +69,7 @@ public class ProfileModel {
                 }
                 //p.setUsername(username);
                 p.setFirstname(first_name);
-                System.out.println(first_name);  
+                System.out.println("to db "+first_name);  
                 p.setLastname(last_name);
                 System.out.println(last_name);
                 p.setDOB(dob);

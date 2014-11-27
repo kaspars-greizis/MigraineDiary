@@ -53,9 +53,9 @@
 						<td><input type="date" name="dob"> *</td>
 					</tr>
 					<tr>
-						<th>Gender*: </th>
+						<th>Gender: </th>
 						<td><input type="radio" name="gender" value="female">Female
-						<input type="radio" name="gender" value="male">Male</td>
+						<input type="radio" name="gender" value="male">Male *</td>
 					</tr>
 					<tr>
 						<th>Employment: </th>

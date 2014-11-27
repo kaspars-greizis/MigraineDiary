@@ -32,8 +32,8 @@
 			<<h3>Edit Profile</h3>
 			<p>Here you can change your details, click Save to store any changes.</p>
 			<form method="POST" action="Update">
+                            <input type="hidden" name="username" value="<%=lg.getUsername()%>">
 				<table>                                        
-                                        <input type="username" name="username" value="<%=lg.getUsername()%>" disabled>
 					<tr>
 						<th>Password: </th>
 						<td><input type="password" name="password"> *</td>
@@ -62,9 +62,13 @@
 						<th>Known Triggers: </th>
 						<td><input type="text" name="known_triggers"> *</td>
 					</tr>
+                                        <tr>
+                                            <td><input type="submit" value="Save"></td>
+                                        </tr>
+                                        
 				</table>
 				<br/>
-				<input type="submit" value="Save">
+				
 			</form>
 		</div>
         <footer>

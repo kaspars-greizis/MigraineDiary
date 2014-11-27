@@ -25,7 +25,10 @@ import stores.LoginState;
  *
  * @author Administrator
  */
-@WebServlet(name = "Login", urlPatterns = {"/Login"})
+@WebServlet(name = "Login", urlPatterns = {
+    "/Login",
+    "/Logout"
+})
 public class Login extends HttpServlet {
 
     Cluster cluster=null;
@@ -70,10 +73,25 @@ public class Login extends HttpServlet {
 	    rd.forward(request,response);
             
         }else{
-            response.sendRedirect("/MigraineDiary/Login.jsp");
+            response.sendRedirect("/Login.jsp");
         }
     }
 
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        HttpSession session = request.getSession();
+        LoginState lg = (LoginState) session.getAttribute("LoggedIn");
+        lg.setLoginState(false);
+        lg.setUsername("visitor");
+        request.setAttribute("LoggedIn", lg);
+        String message = "You have successfully logged out! It was nice having you here.";
+        request.setAttribute("message", message);
+        System.out.println("TESTTING");
+        session.invalidate();
+        RequestDispatcher rd = request.getRequestDispatcher("/Login.jsp");
+        rd.forward(request, response);
+    }
     /**
      * Returns a short description of the servlet.
      *
