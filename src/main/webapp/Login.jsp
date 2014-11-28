@@ -28,10 +28,8 @@
                 </ul>
             </menu>
                     
-            <div id="content">
-		
-                <form method="POST"  action="Login">
-                    
+            <div id="login">		
+                <form method="POST"  action="Login">                    
                 <table>
                     
                     <tr>
@@ -42,17 +40,15 @@
                 	<th>Password: </th>
                 	<td><input type="password" name="password"></td>
                     </tr>
-                    
-                </table>
-                        
-                <br/>
-                <input type="submit" value="Login">
-                <a href="Register.jsp">Not Registered?</a>
-                </form>
-            </div>
-            <div>
-            	<p class="text_body"><span class="copyright">GCKK</span></p>
-            </div>
-		
+                    <tr>
+                        <th><input type="submit" value="Login"></th>
+                        <td><a href="Register.jsp">Not Registered?</a></td>
+                    </tr>
+                </table>  
+                </form>                
+            </div>                    
+            <footer>
+                <p>GCKK</p>
+            </footer>		
 	</body>
 </html>

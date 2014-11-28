@@ -30,9 +30,6 @@
                         <li><a href="/MigraineDiary/AddDiary.jsp">Add To Diary</a></li>
                         <li><a href="/MigraineDiary/Help.jsp">Help</a> </li>
                     <%}%>
-                    
-                    
-                    
                 </ul>
             </menu>
             
