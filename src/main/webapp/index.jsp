@@ -20,7 +20,7 @@
                     <% if (lg!=null){
                         if (lg.getLoginState()) {%>
                         <li><a href="/MigraineDiary/Profile/<%=lg.getUsername()%>">View Profile</a></li>
-                        <li><a href="/MigraineDiary/ViewDiary.jsp">View Diary</a></li>
+                        <li><a href="/MigraineDiary/ViewDiary">View Diary</a></li>
                         <li><a href="/MigraineDiary/AddDiary.jsp">Add To Diary</a></li>
                         <li><a href="/MigraineDiary/Help.jsp">Help</a> </li>
                         <li><a href="/MigraineDiary/Logout">Log out</a> </li>

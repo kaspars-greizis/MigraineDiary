@@ -43,27 +43,19 @@ public class ViewDiaryModel {
         
     }
     public DiaryInfo getDiaryInfo(String username)throws ServletException, IOException{
-        
-         
-         
          try ( 
             Session csession = cluster.connect("migrainediary")) {
             ResultSet rs = null;
-             DiaryInfo d = new DiaryInfo(username);
+            DiaryInfo d = new DiaryInfo(username);
             
             PreparedStatement ps = csession.prepare("select * from migrainediary.diary where username='"+username+"'"); 
             BoundStatement boundStatement = new BoundStatement(ps);
             rs = csession.execute(
                     boundStatement.bind() );
             if (rs.isExhausted()){
-                System.out.println("No First Name returned");
-                
-            }else{
-                
-                
+                System.out.println("No diary returned");                
+            }else{     
                 for (Row row : rs){
-                    
-                  
                     description = row.getString("description");
                     start = row.getString("start");
                     end = row.getString("end");
@@ -79,16 +71,9 @@ public class ViewDiaryModel {
                 d.setTriggers(triggers);
                 }
             }
-        
-                
-            
-           
-            
             csession.close();
             return d;  
-                    
-    
-    }
+        }
     }
     public void setCluster(Cluster cluster) {
             this.cluster = cluster;

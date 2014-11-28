@@ -51,7 +51,7 @@ public class Diary extends HttpServlet {
                 DiaryModel diary = new DiaryModel();
 		diary.setCluster(cluster);
 		diary.addDiary(user, start, end, details, medication, triggers, severity1);
-		response.sendRedirect("/MigraineDiary/Login.jsp");
+		response.sendRedirect("/MigraineDiary/index.jsp");
 	}
 
    

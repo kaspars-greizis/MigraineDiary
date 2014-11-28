@@ -28,7 +28,7 @@ public class DiaryModel
 	
 	public boolean addDiary(String username, String start, String end, String description, String medication, String triggers, int severity)
 	{
-               int diaryId=6;
+            int diaryId=7;
             Session session = cluster.connect("migrainediary");
             PreparedStatement ps = session.prepare("insert into migrainediary.diary (diaryid, username, start, end, description, medication, triggers, severity) values(?,?,?,?,?,?,?,?)");
             BoundStatement boundStatement = new BoundStatement(ps);
