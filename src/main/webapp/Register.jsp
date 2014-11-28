@@ -10,21 +10,24 @@
 	
 	<body>
             <h1>Migraine Diary</h1>
-            <%LoginState lg = (LoginState) session.getAttribute("LoggedIn");%> 
+            <%LoginState lg = (LoginState) session.getAttribute("LoggedIn");%>
+            
             <menu>
                 <ul> 
                     <li><a href="/MigraineDiary/index.jsp" >Home</a></li>
                     <% if (lg!=null){
                         if (lg.getLoginState()) {%>
                         <li><a href="/MigraineDiary/Profile/<%=lg.getUsername()%>">View Profile</a></li>
-                        <li><a href="/MigraineDiary/ViewDiary.jsp">View Diary</a></li>
+                        <li><a href="/MigraineDiary/ViewDiary">View Diary</a></li>
+                        <li><a href="/MigraineDiary/AddDiary.jsp">Add To Diary</a></li>
+                        <li><a href="/MigraineDiary/Help.jsp">Help</a> </li>
+                        <li><a href="/MigraineDiary/Logout">Log out</a> </li>
                     <%}}else{%>
                         <li><a href="/MigraineDiary/Login.jsp">Login</a></li>
                         <li><a href="/MigraineDiary/Login.jsp">View Diary</a></li>
+                        <li><a href="/MigraineDiary/AddDiary.jsp">Add To Diary</a></li>
+                        <li><a href="/MigraineDiary/Help.jsp">Help</a> </li>
                     <%}%>
-                    
-                    <li><a href="/MigraineDiary/AddDiary.jsp">Add To Diary</a></li>
-                    <li><a href="/MigraineDiary/Help.jsp">Help</a> </li>
                 </ul>
             </menu>
 		<div id="content">
@@ -77,9 +80,10 @@
 				<br/>
 				
 			</form>
-        	<div>
-            	<p class="text_body"><span class="copyright">GCKK</span></p>
-        	</div>
+        	
 		</div>
+                <footer>
+                    <p>GCKK</p>
+                </footer>
 	</body>
 </html>
