@@ -2,13 +2,15 @@ package stores;
 
 public class DiaryInfo{
 	
-    private String username = "null";
-    private String description="null";
-    private String start="null";
-    private String end="null";
-    private int severity=0;
-    private String medication="null";
-    private String triggers="null";
+    private String username;
+    private String description;
+    private String start;
+    private String end;
+    private int severity;
+    private String medication;
+    private String triggers;
+    private int diaryId;
+    private int test;
 	
         
       public DiaryInfo(String username){
@@ -63,4 +65,19 @@ public class DiaryInfo{
      public String getTriggers(){
          return triggers;
      }
+     
+     public void setDiary(String username,String medication,String triggers, String start, String end, String description, int severity)
+     {     
+            this.username=username;
+            this.medication=medication;
+            this.triggers=triggers;
+            this.start=start;
+            this.severity=severity;
+            this.end=end;
+            this.description=description;
+           
+    
+         
+     }
+     
 }
